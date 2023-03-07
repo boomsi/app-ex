@@ -1,0 +1,1 @@
+enum LayoutGroup { nonScrollable, scrollable }
