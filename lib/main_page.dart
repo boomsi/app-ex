@@ -9,12 +9,13 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  LayoutGroup _layoutGroup = LayoutGroup.nonScrollable; // 页面类型
+  final LayoutGroup _layoutGroup = LayoutGroup.nonScrollable;
 
   void _onSelectTab(int index) {}
 
   BottomNavigationBarItem _buildItem(
-      {required IconData icon, required String text}) {
+      {required IconData icon, required LayoutType layoutSelection}) {
+    String text = layoutNames[layoutSelection] ?? '';
     return BottomNavigationBarItem(icon: Icon(icon), label: text);
   }
 
@@ -23,11 +24,16 @@ class _MainPageState extends State<MainPage> {
       return BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: [
-          _buildItem(icon: Icons.view_headline, text: 'Row / Col'),
-          _buildItem(icon: Icons.format_size, text: 'Baseline'),
-          _buildItem(icon: Icons.layers, text: 'Stack'),
-          _buildItem(icon: Icons.line_weight, text: 'Expanded'),
-          _buildItem(icon: Icons.format_line_spacing, text: 'Padding'),
+          _buildItem(
+              icon: Icons.view_headline, layoutSelection: LayoutType.rowColumn),
+          _buildItem(
+              icon: Icons.format_size, layoutSelection: LayoutType.baseline),
+          _buildItem(icon: Icons.layers, layoutSelection: LayoutType.stack),
+          _buildItem(
+              icon: Icons.line_weight, layoutSelection: LayoutType.expanded),
+          _buildItem(
+              icon: Icons.format_line_spacing,
+              layoutSelection: LayoutType.padding),
         ],
         onTap: _onSelectTab,
       );
@@ -36,11 +42,12 @@ class _MainPageState extends State<MainPage> {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       items: [
-        _buildItem(icon: Icons.view_week, text: 'Page View'),
-        _buildItem(icon: Icons.format_list_bulleted, text: 'List'),
-        _buildItem(icon: Icons.view_day, text: 'Slivers'),
-        _buildItem(icon: Icons.gradient, text: 'Hero'),
-        _buildItem(icon: Icons.dashboard, text: 'Nested'),
+        _buildItem(icon: Icons.view_week, layoutSelection: LayoutType.pageView),
+        _buildItem(
+            icon: Icons.format_list_bulleted, layoutSelection: LayoutType.list),
+        _buildItem(icon: Icons.view_day, layoutSelection: LayoutType.slivers),
+        _buildItem(icon: Icons.gradient, layoutSelection: LayoutType.hero),
+        _buildItem(icon: Icons.dashboard, layoutSelection: LayoutType.nested),
       ],
       onTap: _onSelectTab,
     );
