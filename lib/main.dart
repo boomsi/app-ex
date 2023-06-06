@@ -1,10 +1,10 @@
 import 'package:app/main_page.dart';
 import 'package:flutter/material.dart';
-import 'expanded/main.dart';
-import 'text/main.dart';
-import 'padding/main.dart';
-import 'stack/main.dart';
-import 'layout/main.dart';
+// import 'expanded/main.dart';
+// import 'text/main.dart';
+// import 'padding/main.dart';
+// import 'stack/main.dart';
+// import 'layout/main.dart';
 
 void main() {
   runApp(HomePage());
