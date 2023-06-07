@@ -20,7 +20,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   LayoutGroup _layoutGroup = LayoutGroup.nonScrollable;
-  LayoutType _layoutSelection1 = LayoutType.stack;
+  LayoutType _layoutSelection1 = LayoutType.expanded;
   LayoutType _layoutSelection2 = LayoutType.pageView;
   LayoutType get _layoutSelection => _layoutGroup == LayoutGroup.nonScrollable
       ? _layoutSelection1
