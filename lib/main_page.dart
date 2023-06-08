@@ -21,7 +21,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   LayoutGroup _layoutGroup = LayoutGroup.scrollable;
   LayoutType _layoutSelection1 = LayoutType.rowColumn;
-  LayoutType _layoutSelection2 = LayoutType.list;
+  LayoutType _layoutSelection2 = LayoutType.hero;
   LayoutType get _layoutSelection => _layoutGroup == LayoutGroup.nonScrollable
       ? _layoutSelection1
       : _layoutSelection2;
