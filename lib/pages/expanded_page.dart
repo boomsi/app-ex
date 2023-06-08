@@ -59,13 +59,13 @@ class _ExpandedPageState extends State<ExpandedPage> {
                           child: Row(
                             children: [
                               Expanded(
-                                  child: Expanded(
-                                      child: Column(
-                                children: [
-                                  _buildBox(flex: 1, color: Colors.grey),
-                                  _buildBox(flex: 1, color: Colors.pink)
-                                ],
-                              ))),
+                                  flex: 1,
+                                  child: Column(
+                                    children: [
+                                      _buildBox(flex: 1, color: Colors.grey),
+                                      _buildBox(flex: 1, color: Colors.pink)
+                                    ],
+                                  )),
                               _buildBox(flex: 2, color: Colors.green)
                             ],
                           )),

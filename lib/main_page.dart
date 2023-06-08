@@ -19,9 +19,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  LayoutGroup _layoutGroup = LayoutGroup.nonScrollable;
-  LayoutType _layoutSelection1 = LayoutType.expanded;
-  LayoutType _layoutSelection2 = LayoutType.pageView;
+  LayoutGroup _layoutGroup = LayoutGroup.scrollable;
+  LayoutType _layoutSelection1 = LayoutType.rowColumn;
+  LayoutType _layoutSelection2 = LayoutType.list;
   LayoutType get _layoutSelection => _layoutGroup == LayoutGroup.nonScrollable
       ? _layoutSelection1
       : _layoutSelection2;
@@ -55,9 +55,7 @@ class _MainPageState extends State<MainPage> {
       return BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.blue,
-          currentIndex: _layoutGroup == LayoutGroup.nonScrollable
-              ? LayoutType.values.indexOf(_layoutSelection)
-              : LayoutType.values.indexOf(_layoutSelection) - 5,
+          currentIndex: LayoutType.values.indexOf(_layoutSelection),
           items: [
             _buildItem(
                 icon: Icons.view_headline,
@@ -76,6 +74,8 @@ class _MainPageState extends State<MainPage> {
 
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.blue,
+      currentIndex: LayoutType.values.indexOf(_layoutSelection) - 5,
       items: [
         _buildItem(icon: Icons.view_week, layoutSelection: LayoutType.pageView),
         _buildItem(
